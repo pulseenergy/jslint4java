@@ -9,7 +9,7 @@
       <plugin>
         <groupId>com.googlecode.jslint4java</groupId>
         <artifactId>jslint4java-maven-plugin</artifactId>
-        <version>1.5-SNAPSHOT</version>
+        <version>1.5-git20100801</version>
         <configuration>
           <!-- ??? -->
         </configuration>
