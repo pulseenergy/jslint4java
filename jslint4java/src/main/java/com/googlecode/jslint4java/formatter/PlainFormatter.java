@@ -59,6 +59,9 @@ public class PlainFormatter implements JSLintResultFormatter {
      * @param howmany
      */
     protected String spaces(int howmany) {
+    	if (howmany < 1) {
+    		return "";
+    	}
         StringBuffer sb = new StringBuffer(howmany);
         for (int i = 0; i < howmany; i++) {
             sb.append(" ");

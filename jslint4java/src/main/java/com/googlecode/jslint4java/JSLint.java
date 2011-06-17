@@ -41,8 +41,11 @@ public class JSLint {
      */
     private static final class JSFunctionParamConverter implements Util.Converter<String> {
         public String convert(Object obj) {
-            Scriptable scope = (Scriptable) obj;
-            return Util.stringValue("value", scope);
+        	if (obj instanceof Scriptable) {
+	            Scriptable scope = (Scriptable) obj;
+	            return Util.stringValue("value", scope);
+        	}
+        	return String.valueOf(obj);
         }
     }
 
