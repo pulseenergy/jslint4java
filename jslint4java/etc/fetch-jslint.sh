@@ -5,4 +5,4 @@
 
 resourceDir="${1:-src/main/resources}"
 pkgDir="${2:-net/happygiraffe/jslint}"
-curl -R -o $resourceDir/$pkgDir/jslint.js http://www.jslint.com/jslint.js
+curl -R -o $resourceDir/$pkgDir/jshint.js http://jshint.com/jshint.js

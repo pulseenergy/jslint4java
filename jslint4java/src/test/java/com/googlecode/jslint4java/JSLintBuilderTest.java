@@ -13,7 +13,7 @@ import org.junit.Test;
 public class JSLintBuilderTest {
 
     // This jslint will return true for any file.
-    private static final String STUB_JSLINT = "com/googlecode/jslint4java/stubjslint.js";
+    private static final String STUB_JSLINT = "com/googlecode/jslint4java/stubjshint.js";
 
     private final JSLintBuilder builder = new JSLintBuilder();
 
@@ -47,9 +47,9 @@ public class JSLintBuilderTest {
     @Test
     public void testFromReader() throws Exception {
         // Same as stubjslint.js.
-        String jslint = "function JSLINT() {JSLINT.errors=[];return true}";
+        String jslint = "function JSHINT() {JSHINT.errors=[];return true}";
         StringReader reader = new StringReader(jslint);
-        assertJSLintOK(builder.fromReader(reader, "stubjslint.js"));
+        assertJSLintOK(builder.fromReader(reader, "stubjshint.js"));
     }
 
     @Test

@@ -99,7 +99,7 @@ public class JSLintMojoTest extends AbstractMojoTestCase {
         mojo = (JSLintMojo) lookupMojo(GOAL, pom);
         mojo.setLog(logger);
         // We don't care about "use strict" for these tests.
-        mojo.addOption(Option.SLOPPY, "true");
+        mojo.addOption(Option.STRICT, "false");
         mojo.setOutputFolder(temp.getRoot());
     }
 
@@ -140,7 +140,7 @@ public class JSLintMojoTest extends AbstractMojoTestCase {
         useBadSource();
         executeMojoExpectingFailure();
         assertTrue("we logged something", !logger.loggedItems.isEmpty());
-        assertLogContains("bad.js:1:26: Expected ';' and instead saw '(end)'.");
+        assertLogContains("bad.js:1:26: Missing semicolon.");
     }
 
     @Test
@@ -183,7 +183,7 @@ public class JSLintMojoTest extends AbstractMojoTestCase {
     public void testOptions() throws Exception {
         useGoodSource();
         Map<String, String> options = new HashMap<String, String>();
-        options.put("sloppy", "false");
+        options.put("strict", "true");
         mojo.setOptions(options);
         executeMojoExpectingFailure();
         assertTrue(true);
@@ -193,11 +193,9 @@ public class JSLintMojoTest extends AbstractMojoTestCase {
     @Test
     public void testOptionsFromPom() {
         Map<String, String> options = mojo.getOptions();
-        System.out.println(options);
         assertEquals(2, options.size());
         assertEquals("true", options.get("undef"));
-        // This actually comes from our setUp() call…
-        assertEquals("true", options.get("sloppy"));
+        assertEquals("false", options.get("strict"));
     }
 
     private void useBadSource() {

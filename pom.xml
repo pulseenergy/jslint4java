@@ -40,7 +40,7 @@
   </scm>
   <modules>
     <module>jslint4java</module>
-    <module>jslint4java-ant</module>
+    <!--<module>jslint4java-ant</module>-->
     <module>jslint4java-dist</module>
     <module>jslint4java-docs</module>
     <module>jslint4java-maven-plugin</module>

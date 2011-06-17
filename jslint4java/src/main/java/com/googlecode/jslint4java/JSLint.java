@@ -146,7 +146,7 @@ public class JSLint {
                 b.report(callReport(false));
 
                 // Extract JSLINT.data() output and set it on the result.
-                Scriptable lintScope = (Scriptable) scope.get("JSLINT", scope);
+                Scriptable lintScope = (Scriptable) scope.get("JSHINT", scope);
                 Object o = lintScope.get("data", lintScope);
                 // Real JSLINT will always have this, but some of my test stubs don't.
                 if (o != UniqueTag.NOT_FOUND) {
@@ -177,7 +177,7 @@ public class JSLint {
         return (String) contextFactory.call(new ContextAction() {
             public Object run(Context cx) {
                 Object[] args = new Object[] { Boolean.valueOf(errorsOnly) };
-                Scriptable lintScope = (Scriptable) scope.get("JSLINT", scope);
+                Scriptable lintScope = (Scriptable) scope.get("JSHINT", scope);
                 Object report = lintScope.get("report", lintScope);
                 // Shouldn't happen ordinarily, but some of my tests don't have it.
                 if (report == UniqueTag.NOT_FOUND) {
@@ -195,7 +195,7 @@ public class JSLint {
             public Object run(Context cx) {
                 String src = javaScript == null ? "" : javaScript;
                 Object[] args = new Object[] { src, optionsAsJavaScriptObject() };
-                Function lintFunc = (Function) scope.get("JSLINT", scope);
+                Function lintFunc = (Function) scope.get("JSHINT", scope);
                 // JSLINT actually returns a boolean, but we ignore it as we always go
                 // and look at the errors in more detail.
                 lintFunc.call(cx, scope, scope, args);
@@ -226,7 +226,7 @@ public class JSLint {
      * Return the version of jslint in use.
      */
     public String getEdition() {
-        Scriptable lintScope = (Scriptable) scope.get("JSLINT", scope);
+        Scriptable lintScope = (Scriptable) scope.get("JSHINT", scope);
         return (String) lintScope.get("edition", lintScope);
     }
 
@@ -283,7 +283,7 @@ public class JSLint {
 
     private List<Issue> readErrors(String systemId) {
         ArrayList<Issue> issues = new ArrayList<Issue>();
-        Scriptable JSLINT = (Scriptable) scope.get("JSLINT", scope);
+        Scriptable JSLINT = (Scriptable) scope.get("JSHINT", scope);
         Scriptable errors = (Scriptable) JSLINT.get("errors", JSLINT);
         int count = Util.intValue("length", errors);
         for (int i = 0; i < count; i++) {

@@ -59,41 +59,49 @@
     </p>
     <dl>
 <!-- // BEGIN-OPTIONS -->
-    <dt>adsafe <dd>If adsafe rules should be enforced
-    <dt>bitwise <dd>If bitwise operators should be allowed
+    <dt>asi <dd>If automatic semicolon insertion should be tolerated
+    <dt>bitwise <dd>If bitwise operators should not be allowed
+    <dt>boss <dd>If advanced usage of assignments should be allowed
     <dt>browser <dd>If the standard browser globals should be predefined
-    <dt>cap <dd>If upper case html should be allowed
-    <dt>confusion <dd>If types can be used inconsistently
-    <dt>continue <dd>If the continuation statement should be tolerated
-    <dt>css <dd>If css workarounds should be tolerated
+    <dt>couch <dd>If couchdb globals should be predefined
+    <dt>curly <dd>If curly braces around blocks should be required (even in if/for/while)
     <dt>debug <dd>If debugger statements should be allowed
-    <dt>devel <dd>If logging should be allowed (console, alert, etc.)
-    <dt>eqeq <dd>If == should be allowed
+    <dt>devel <dd>If logging globals should be predefined (console, alert, etc.)
+    <dt>eqeqeq <dd>If === should be required
+    <dt>eqnull <dd>If == null comparisons should be tolerated
     <dt>es5 <dd>If es5 syntax should be allowed
     <dt>evil <dd>If eval should be allowed
-    <dt>forin <dd>If for in statements need not filter
-    <dt>fragment <dd>If html fragments should be allowed
+    <dt>expr <dd>If expressionstatement should be allowed as programs
+    <dt>forin <dd>If for in statements must filter
+    <dt>globalstrict <dd>If global "use strict"; should be allowed (also enables 'strict')
+    <dt>immed <dd>If immediate invocations must be wrapped in parens
     <dt>indent <dd>The indentation factor
+    <dt>jquery <dd>If jquery globals should be predefined
+    <dt>latedef <dd>If the use before definition should not be tolerated
+    <dt>laxbreak <dd>If line breaks should not be checked
+    <dt>loopfunc <dd>If functions should be allowed to be defined within loops
     <dt>maxerr <dd>The maximum number of errors to allow
     <dt>maxlen <dd>The maximum length of a source line
-    <dt>newcap <dd>If constructor names capitalization is ignored
-    <dt>node <dd>If node.js globals should be predefined
-    <dt>nomen <dd>If names may have dangling _
-    <dt>on <dd>If html event handlers should be allowed
+    <dt>mootools <dd>If mootools globals should be predefined
+    <dt>newcap <dd>If constructor names must be capitalized
+    <dt>noarg <dd>If arguments.caller and arguments.callee should be disallowed
+    <dt>node <dd>If the node.js environment globals should be predefined
+    <dt>noempty <dd>If empty blocks should be disallowed
+    <dt>nomen <dd>If names should be checked
+    <dt>nonew <dd>If using `new` for side-effects should be disallowed
+    <dt>onevar <dd>If only one var statement per function should be allowed
     <dt>passfail <dd>If the scan should stop on first error
-    <dt>plusplus <dd>If increment/decrement should be allowed
+    <dt>plusplus <dd>If increment/decrement should not be allowed
     <dt>predef <dd>The names of predefined global variables
-    <dt>regexp <dd>If the . should be allowed in regexp literals
+    <dt>prototypejs <dd>If prototype and scriptaculous globals shoudl be predefined
+    <dt>regexp <dd>If the . should not be allowed in regexp literals
     <dt>rhino <dd>If the rhino environment globals should be predefined
-    <dt>safe <dd>If use of some browser features should be restricted
-    <dt>sloppy <dd>If the 'use strict'; pragma is optional
+    <dt>shadow <dd>If variable shadowing should be tolerated
+    <dt>strict <dd>Require the "use strict"; pragma
     <dt>sub <dd>If all forms of subscript notation are tolerated
-    <dt>undef <dd>If variables can be declared out of order
-    <dt>unparam <dd>If unused parameters should be tolerated
-    <dt>vars <dd>If multiple var statements per function should be allowed
-    <dt>white <dd>If sloppy whitespace is tolerated
-    <dt>widget <dd>If the yahoo widgets globals should be predefined
-    <dt>windows <dd>If ms windows-specific globals should be predefined
+    <dt>supernew <dd>If `new function () { ... };` and `new object;` should be tolerated
+    <dt>undef <dd>If variables should be declared before used
+    <dt>white <dd>If strict whitespace rules apply
 <!-- // END-OPTIONS -->
 
     </dl>

@@ -9,7 +9,7 @@ base=$(dirname $dir)
 javaDir="$base/src/main/java"
 resourceDir="$base/src/main/resources"
 pkgDir="com/googlecode/jslint4java"
-jslint="jslint.js"
+jslint="jshint.js"
 
 # Specify an explicit jslint instead of downloading.
 if [[ -f $1 ]] ; then

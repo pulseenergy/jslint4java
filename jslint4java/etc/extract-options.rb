@@ -5,36 +5,24 @@
 
 opts = {
   # Hard code, as not mentioned in the source list.
+  'indent' => ['The indentation factor', 'Integer'],
+  'maxerr' => ['The maximum number of errors to allow', 'Integer'],
+  'maxlen' => ['The maximum length of a source line', 'Integer'],
   'predef' => ['The names of predefined global variables', 'StringArray'],
-}
-
-# The non-boolean option types.
-opt_types = {
-  'indent' => 'Integer',
-  'maxerr' => 'Integer',
-  'maxlen' => 'Integer',
-  'predef' => 'StringArray',
 }
 
 File.open(ARGV[0]) do |fh|
   # To match an option declaration.
-  re = /^\/\/\s+'?(\w+)'?\s+(true,?\s+(.*)|the.*)/
+  re = /^\s+'?(\w+)'?\s*:\s*true,?\s+\/\/(.*)$/
   while line = fh.gets do
     # The jslint options are now in a comment.  Use the first and last options
     # as delimiters.
-    if (line =~ /^\/\/\s{5}adsafe\s/) .. (line =~ /^\s*$/)
+    if (line =~ /^\s+boolOptions = \{/) .. (line =~ /^\s+\},/)
       if md = line.match(re)
-        key = md[1]
-        if md[3]
-          desc = md[3].capitalize
-          type = 'Boolean'
-        else
-          desc = md[2].capitalize
-          type = opt_types[key]
-        end
+        key = md[1].strip
+        desc = md[2].strip.capitalize
+        type = 'Boolean'
         opts[key] = [desc, type]
-      elsif line.strip != ''
-        raise "Bad option line '#{line.strip}'"
       end
     end
   end

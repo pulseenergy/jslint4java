@@ -12,35 +12,35 @@ import java.util.Locale;
  */
 public enum Option {
     // BEGIN-OPTIONS
-    /** If adsafe rules should be enforced */
-    ADSAFE("If adsafe rules should be enforced", Boolean.class),
+    /** If automatic semicolon insertion should be tolerated */
+    ASI("If automatic semicolon insertion should be tolerated", Boolean.class),
 
-    /** If bitwise operators should be allowed */
-    BITWISE("If bitwise operators should be allowed", Boolean.class),
+    /** If bitwise operators should not be allowed */
+    BITWISE("If bitwise operators should not be allowed", Boolean.class),
+
+    /** If advanced usage of assignments should be allowed */
+    BOSS("If advanced usage of assignments should be allowed", Boolean.class),
 
     /** If the standard browser globals should be predefined */
     BROWSER("If the standard browser globals should be predefined", Boolean.class),
 
-    /** If upper case html should be allowed */
-    CAP("If upper case html should be allowed", Boolean.class),
+    /** If couchdb globals should be predefined */
+    COUCH("If couchdb globals should be predefined", Boolean.class),
 
-    /** If types can be used inconsistently */
-    CONFUSION("If types can be used inconsistently", Boolean.class),
-
-    /** If the continuation statement should be tolerated */
-    CONTINUE("If the continuation statement should be tolerated", Boolean.class),
-
-    /** If css workarounds should be tolerated */
-    CSS("If css workarounds should be tolerated", Boolean.class),
+    /** If curly braces around blocks should be required (even in if/for/while) */
+    CURLY("If curly braces around blocks should be required (even in if/for/while)", Boolean.class),
 
     /** If debugger statements should be allowed */
     DEBUG("If debugger statements should be allowed", Boolean.class),
 
-    /** If logging should be allowed (console, alert, etc.) */
-    DEVEL("If logging should be allowed (console, alert, etc.)", Boolean.class),
+    /** If logging globals should be predefined (console, alert, etc.) */
+    DEVEL("If logging globals should be predefined (console, alert, etc.)", Boolean.class),
 
-    /** If == should be allowed */
-    EQEQ("If == should be allowed", Boolean.class),
+    /** If === should be required */
+    EQEQEQ("If === should be required", Boolean.class),
+
+    /** If == null comparisons should be tolerated */
+    EQNULL("If == null comparisons should be tolerated", Boolean.class),
 
     /** If es5 syntax should be allowed */
     ES5("If es5 syntax should be allowed", Boolean.class),
@@ -48,14 +48,32 @@ public enum Option {
     /** If eval should be allowed */
     EVIL("If eval should be allowed", Boolean.class),
 
-    /** If for in statements need not filter */
-    FORIN("If for in statements need not filter", Boolean.class),
+    /** If expressionstatement should be allowed as programs */
+    EXPR("If expressionstatement should be allowed as programs", Boolean.class),
 
-    /** If html fragments should be allowed */
-    FRAGMENT("If html fragments should be allowed", Boolean.class),
+    /** If for in statements must filter */
+    FORIN("If for in statements must filter", Boolean.class),
+
+    /** If global "use strict"; should be allowed (also enables 'strict') */
+    GLOBALSTRICT("If global \"use strict\"; should be allowed (also enables 'strict')", Boolean.class),
+
+    /** If immediate invocations must be wrapped in parens */
+    IMMED("If immediate invocations must be wrapped in parens", Boolean.class),
 
     /** The indentation factor */
     INDENT("The indentation factor", Integer.class),
+
+    /** If jquery globals should be predefined */
+    JQUERY("If jquery globals should be predefined", Boolean.class),
+
+    /** If the use before definition should not be tolerated */
+    LATEDEF("If the use before definition should not be tolerated", Boolean.class),
+
+    /** If line breaks should not be checked */
+    LAXBREAK("If line breaks should not be checked", Boolean.class),
+
+    /** If functions should be allowed to be defined within loops */
+    LOOPFUNC("If functions should be allowed to be defined within loops", Boolean.class),
 
     /** The maximum number of errors to allow */
     MAXERR("The maximum number of errors to allow", Integer.class),
@@ -63,59 +81,65 @@ public enum Option {
     /** The maximum length of a source line */
     MAXLEN("The maximum length of a source line", Integer.class),
 
-    /** If constructor names capitalization is ignored */
-    NEWCAP("If constructor names capitalization is ignored", Boolean.class),
+    /** If mootools globals should be predefined */
+    MOOTOOLS("If mootools globals should be predefined", Boolean.class),
 
-    /** If node.js globals should be predefined */
-    NODE("If node.js globals should be predefined", Boolean.class),
+    /** If constructor names must be capitalized */
+    NEWCAP("If constructor names must be capitalized", Boolean.class),
 
-    /** If names may have dangling _ */
-    NOMEN("If names may have dangling _", Boolean.class),
+    /** If arguments.caller and arguments.callee should be disallowed */
+    NOARG("If arguments.caller and arguments.callee should be disallowed", Boolean.class),
 
-    /** If html event handlers should be allowed */
-    ON("If html event handlers should be allowed", Boolean.class),
+    /** If the node.js environment globals should be predefined */
+    NODE("If the node.js environment globals should be predefined", Boolean.class),
+
+    /** If empty blocks should be disallowed */
+    NOEMPTY("If empty blocks should be disallowed", Boolean.class),
+
+    /** If names should be checked */
+    NOMEN("If names should be checked", Boolean.class),
+
+    /** If using `new` for side-effects should be disallowed */
+    NONEW("If using `new` for side-effects should be disallowed", Boolean.class),
+
+    /** If only one var statement per function should be allowed */
+    ONEVAR("If only one var statement per function should be allowed", Boolean.class),
 
     /** If the scan should stop on first error */
     PASSFAIL("If the scan should stop on first error", Boolean.class),
 
-    /** If increment/decrement should be allowed */
-    PLUSPLUS("If increment/decrement should be allowed", Boolean.class),
+    /** If increment/decrement should not be allowed */
+    PLUSPLUS("If increment/decrement should not be allowed", Boolean.class),
 
     /** The names of predefined global variables */
     PREDEF("The names of predefined global variables", StringArray.class),
 
-    /** If the . should be allowed in regexp literals */
-    REGEXP("If the . should be allowed in regexp literals", Boolean.class),
+    /** If prototype and scriptaculous globals shoudl be predefined */
+    PROTOTYPEJS("If prototype and scriptaculous globals shoudl be predefined", Boolean.class),
+
+    /** If the . should not be allowed in regexp literals */
+    REGEXP("If the . should not be allowed in regexp literals", Boolean.class),
 
     /** If the rhino environment globals should be predefined */
     RHINO("If the rhino environment globals should be predefined", Boolean.class),
 
-    /** If use of some browser features should be restricted */
-    SAFE("If use of some browser features should be restricted", Boolean.class),
+    /** If variable shadowing should be tolerated */
+    SHADOW("If variable shadowing should be tolerated", Boolean.class),
 
-    /** If the 'use strict'; pragma is optional */
-    SLOPPY("If the 'use strict'; pragma is optional", Boolean.class),
+    /** Require the "use strict"; pragma */
+    STRICT("Require the \"use strict\"; pragma", Boolean.class),
 
     /** If all forms of subscript notation are tolerated */
     SUB("If all forms of subscript notation are tolerated", Boolean.class),
 
-    /** If variables can be declared out of order */
-    UNDEF("If variables can be declared out of order", Boolean.class),
+    /** If `new function () { ... };` and `new object;` should be tolerated */
+    SUPERNEW("If `new function () { ... };` and `new object;` should be tolerated", Boolean.class),
 
-    /** If unused parameters should be tolerated */
-    UNPARAM("If unused parameters should be tolerated", Boolean.class),
+    /** If variables should be declared before used */
+    UNDEF("If variables should be declared before used", Boolean.class),
 
-    /** If multiple var statements per function should be allowed */
-    VARS("If multiple var statements per function should be allowed", Boolean.class),
-
-    /** If sloppy whitespace is tolerated */
-    WHITE("If sloppy whitespace is tolerated", Boolean.class),
-
-    /** If the yahoo widgets globals should be predefined */
-    WIDGET("If the yahoo widgets globals should be predefined", Boolean.class),
-
-    /** If ms windows-specific globals should be predefined */
-    WINDOWS("If ms windows-specific globals should be predefined", Boolean.class),
+    /** If strict whitespace rules apply */
+    WHITE("If strict whitespace rules apply", Boolean.class),
 
     // END-OPTIONS
     ;
