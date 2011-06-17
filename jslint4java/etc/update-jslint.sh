@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Download & update the latest jslint.
 #

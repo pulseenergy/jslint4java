@@ -114,14 +114,20 @@ public enum Option {
     /** The names of predefined global variables */
     PREDEF("The names of predefined global variables", StringArray.class),
 
-    /** If prototype and scriptaculous globals shoudl be predefined */
-    PROTOTYPEJS("If prototype and scriptaculous globals shoudl be predefined", Boolean.class),
+    /** If prototype and scriptaculous globals should be predefined */
+    PROTOTYPEJS("If prototype and scriptaculous globals should be predefined", Boolean.class),
+
+    /** If unescaped last dash (-) inside brackets should be tolerated */
+    REGEXDASH("If unescaped last dash (-) inside brackets should be tolerated", Boolean.class),
 
     /** If the . should not be allowed in regexp literals */
     REGEXP("If the . should not be allowed in regexp literals", Boolean.class),
 
     /** If the rhino environment globals should be predefined */
     RHINO("If the rhino environment globals should be predefined", Boolean.class),
+
+    /** If script-targeted urls should be tolerated */
+    SCRIPTURL("If script-targeted urls should be tolerated", Boolean.class),
 
     /** If variable shadowing should be tolerated */
     SHADOW("If variable shadowing should be tolerated", Boolean.class),
@@ -135,11 +141,17 @@ public enum Option {
     /** If `new function () { ... };` and `new object;` should be tolerated */
     SUPERNEW("If `new function () { ... };` and `new object;` should be tolerated", Boolean.class),
 
+    /** If trailing whitespace rules apply */
+    TRAILING("If trailing whitespace rules apply", Boolean.class),
+
     /** If variables should be declared before used */
     UNDEF("If variables should be declared before used", Boolean.class),
 
     /** If strict whitespace rules apply */
     WHITE("If strict whitespace rules apply", Boolean.class),
+
+    /** If the windows scripting host environment globals should be predefined */
+    WSH("If the windows scripting host environment globals should be predefined", Boolean.class),
 
     // END-OPTIONS
     ;

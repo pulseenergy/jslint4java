@@ -109,14 +109,20 @@ class JSLintFlags {
     @Parameter(names = "--predef", description = "The names of predefined global variables")
     public String PREDEF = null;
 
-    @Parameter(names = "--prototypejs", description = "If prototype and scriptaculous globals shoudl be predefined")
+    @Parameter(names = "--prototypejs", description = "If prototype and scriptaculous globals should be predefined")
     public Boolean PROTOTYPEJS = null;
+
+    @Parameter(names = "--regexdash", description = "If unescaped last dash (-) inside brackets should be tolerated")
+    public Boolean REGEXDASH = null;
 
     @Parameter(names = "--regexp", description = "If the . should not be allowed in regexp literals")
     public Boolean REGEXP = null;
 
     @Parameter(names = "--rhino", description = "If the rhino environment globals should be predefined")
     public Boolean RHINO = null;
+
+    @Parameter(names = "--scripturl", description = "If script-targeted urls should be tolerated")
+    public Boolean SCRIPTURL = null;
 
     @Parameter(names = "--shadow", description = "If variable shadowing should be tolerated")
     public Boolean SHADOW = null;
@@ -130,11 +136,17 @@ class JSLintFlags {
     @Parameter(names = "--supernew", description = "If `new function () { ... };` and `new object;` should be tolerated")
     public Boolean SUPERNEW = null;
 
+    @Parameter(names = "--trailing", description = "If trailing whitespace rules apply")
+    public Boolean TRAILING = null;
+
     @Parameter(names = "--undef", description = "If variables should be declared before used")
     public Boolean UNDEF = null;
 
     @Parameter(names = "--white", description = "If strict whitespace rules apply")
     public Boolean WHITE = null;
+
+    @Parameter(names = "--wsh", description = "If the windows scripting host environment globals should be predefined")
+    public Boolean WSH = null;
 
     // END-OPTIONS
 }
